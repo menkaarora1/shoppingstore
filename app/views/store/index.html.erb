@@ -1,0 +1,24 @@
+<div id="content">
+<h1>Shopping cart</h1>
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+ 
+
+ 
+<% @products.each do |product| %>
+  <div class="entry">
+   
+    <h3><%= product.title %></h3>
+	<%= image_tag(product.image_url) %>
+   <br> <%= sanitize(product.description) %></br>
+    <div class="price_line">
+      <span class="price"><%=  number_to_currency(product.price) %></span>
+	 <%= button_to 'Add to Cart', line_items_path(product_id: product) %>
+
+    </div>
+  </div>
+
+<% end %>
+<p><%= will_paginate @products %></p>
+</div>

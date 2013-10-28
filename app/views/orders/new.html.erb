@@ -1,0 +1,15 @@
+<div id="content">
+<h1>New order</h1>
+
+<div class="depot_form">
+  <fieldset>
+    <legend>Please Enter Your Details</legend>
+   <% if user_signed_in? %>
+		<%= render partial: "form_if_signed" %>
+	<% else %>
+		<%= render 'form'  %>
+	<% end %>
+
+  </fieldset>
+</div>
+</div>

@@ -1,0 +1,57 @@
+ 
+
+<div id="content">
+<% if user_signed_in?  && current_user.email != "admin@g.com"%>
+
+
+<h1 align="center">Shopping cart</h1>
+<% if notice %>
+
+<% end %>
+ 
+
+ 
+<% @products.each do |product| %>
+  <div class="entry">
+   
+    <h3><%= product.title %></h3>
+	<%= image_tag(product.image_url) %>
+   <br> <%= sanitize(product.description) %></br>
+    <div class="price_line">
+      <span class="price"><%=  number_to_currency(product.price) %></span>
+	 <%= button_to 'Add to Cart', line_items_path(product_id: product) %>
+    </div>
+  </div>
+<% end %>
+
+<p><%= will_paginate @products %></p>
+
+ <% elsif user_signed_in? && current_user.email == "admin@g.com" %>
+
+<h1>Welcome admin</h1>
+ 
+It's <%= Time.now %>
+<br></br>
+<h3>you have succesfully signed in <%=current_user.email%></h3>
+We have <%= (Order.count) %> orders
+
+<% else %>
+
+<h1 align="center"> Welcome to My Shopping Store</h1><br></br>
+<p>Online shopping website's customers can login and place the orders. While placing the order they select products from the master list.</p>
+<p>So when order is placed successfully customer see the invoice with order number, product details like name and price and total amount
+of the invoice.</p>
+<p> Only Admin of the site can add new products to the list and edit existing ones.
+</p>
+
+ 
+  
+<% end %>
+</div>
+
+
+
+
+
+
+

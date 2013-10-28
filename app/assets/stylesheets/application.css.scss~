@@ -1,0 +1,141 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+
+ *= require_tree .
+ */
+
+html {
+width: 100%;
+height: 100%;
+margin: 0px;
+padding: 0px;
+}
+
+body {
+width: 100%;
+height:100%;
+margin: 0px;
+padding: 0px;
+background: #2781BA;
+background-image:url('back3.jpg');
+background-repeat:none;
+}
+#bannerright
+{
+  font:  15px "Times New Roman", serif;
+  padding: 20px;
+
+height:20px;
+width:400px;
+
+margin-left:650px;
+}
+p {font-size:30px;}
+
+#banner {
+  //background: #E4F5FF;
+  padding: 10px;
+
+  font: small-caps 40px/40px "Times New Roman", serif;
+  color: #700;
+  text-align: center;
+height:100px;
+background-image:url('top.jpg');
+
+ 
+  img {
+    float: left;
+  }
+}
+ 
+#notice {
+  color: #000 !important;
+  border: 2px solid red;
+  padding: 1em;
+  margin-bottom: 2em;
+  background-color: #f0f0f0;
+  font: bold smaller sans-serif;
+}
+ 
+
+ 
+ #wrapper {
+display: block;
+width: 960px;
+min-height: 100%;
+
+ height:850px;
+margin: 0px auto -20px auto;
+padding: 0px;
+//border:2px solid red;
+
+
+}
+
+#side
+{
+width:200px;
+display:block;
+height:700px;
+//border: 1px solid blue;
+padding-top:50px;
+padding-left:20px;
+
+
+background:#E4F5FF
+}
+
+#content {
+display:block;
+height: 720px;
+width: 681px;
+margin-left:222px;
+background: #FFFFFF;
+
+//border:2px solid green;
+margin-top:-750px;
+padding-left:50px;
+padding-top:30px;
+overflow:scroll;
+background:#E4F5FF
+}
+#links
+{
+ font: 18px "Times New Roman", serif;
+	margin-top:20px;
+
+color:green;}
+
+#signoutlink
+{
+
+font: 20px "Times New Roman", serif;
+	
+
+
+color:green;
+
+}
+    ul {
+      padding: 0;
+ 
+      li {
+        list-style: none;
+ 
+        a {
+          color: #bfb;
+          font-size: small;
+        }
+      }
+    }
+  
+

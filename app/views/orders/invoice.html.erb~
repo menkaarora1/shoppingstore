@@ -1,0 +1,26 @@
+<center><h3>Here are your Invoice details</h3></center>
+<% total_price = 0.0 %>
+<table width="30%">
+<tr>
+<td><strong>Your Invoice ID is:</strong><%=@order.id %></td>
+
+</tr>
+<tr><td></td></tr>
+<tr><td><strong>Your Items are</strong></td></tr>
+
+
+<% @products.each do |product| %>
+<% total_price = total_price+product.price.to_f %>
+<tr>
+<td><%= product.title %></td>
+<td><%= product.price %></td>
+</tr>
+<% end %>
+<tr><td>------------------------------------------</td></tr>
+<tr>
+<td>Total price is</td>
+<td><%= total_price %></td>
+</tr></table>
+<br/>
+<h3>Thank you for your order</h3>
+<br/>

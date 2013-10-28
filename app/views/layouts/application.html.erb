@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+  <%= stylesheet_link_tag "application" %><!-- <label id="code.slt"/> -->
+  <%= javascript_include_tag "application" %><!-- <label id="code.jlt"/> -->
+  <%= csrf_meta_tag %><!-- <label id="code.csrf"/> -->
+</head>
+<body class="<%= controller.controller_name %>">
+   <div id="wrapper">
+
+<div id="banner">
+ 
+   <!-- <%= @page_title || "online shopping store" %><!-- <label id="code.depot.e.title"/> -->
+	<div id="bannerright">
+	<% if user_signed_in? %>
+	<table>
+<tr>
+	<td><h3>logged in as <strong><%=current_user.email%></strong></h3></td>
+	<td><%= link_to "Sign Out", destroy_user_session_path, :method => :delete,:id=>"signoutlink"  %></td></tr></table>
+	 <% end %>
+
+	</div>
+  </div>
+
+ 
+    
+   
+<div id="side">	
+
+	<%= link_to 'Home', welcome_index_path, :method => :get,:id=>"links"%> <br/><hr>
+  	
+
+	<%= link_to "Sign In", new_user_session_path, :method => :get, :id=>"links" %><hr>
+
+	<%= link_to "Sign up", new_user_registration_path, :method => :get,:id=>"links"  %><hr>
+
+    <% if user_signed_in? && current_user.email == "admin@g.com" %>
+
+  	<%= link_to 'Add New Product', new_product_path,:id=>"links"%> <br/><hr>
+  	<%= link_to 'View Existing Product', products_path,:id=>"links" %> <br/><hr>
+	<li><%= link_to 'Orders',   orders_path,:id=>"links"  %></li> <hr>
+
+    <% end %>
+  	
+    <%= image_tag("") %>
+	</div>
+	
+      <%= yield %><!-- <label id="code.depot.e.include"/> -->
+   
+  </div>
+</body>
+</html>
